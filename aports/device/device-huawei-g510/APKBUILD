@@ -1,0 +1,22 @@
+# Reference: <https://postmarketos.org/devicepkg>
+pkgname="device-huawei-g510"
+pkgdesc="Huawei Ascend G510"
+pkgver=0.1
+pkgrel=0
+url="https://postmarketos.org"
+license="MIT"
+arch="noarch"
+options="!check"
+depends="postmarketos-base linux-huawei-g510 mkbootimg mesa-dri-swrast"
+makedepends="devicepkg-dev"
+source="deviceinfo"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+sha512sums="dc9b738769f629f6f094faf801fd4ff55387d97eeecd6d767d1c505f9d281ac2cf7f75c08ef36bee81d72416aa8ee6285587e4915186bc34a9df18d117387fa7  deviceinfo"
